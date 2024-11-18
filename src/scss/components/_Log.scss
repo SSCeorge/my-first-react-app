@@ -1,0 +1,23 @@
+#log {
+  max-width: 10rem;
+  color: black;
+  font-weight: bold;
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  text-align: center;
+}
+
+#log li {
+  border-radius: 4px;
+  border: var(--color-vite-dark1) 2px solid;
+  justify-content: center;
+  background-color: var(--color-vite1);
+  animation: slide-in 1s ease-out forwards;
+  margin: 0.75rem;
+}
+
+#log li.highlighted {
+  background-color: var(--color-vite-dark2);
+  color: white;
+}

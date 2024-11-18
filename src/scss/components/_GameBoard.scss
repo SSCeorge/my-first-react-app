@@ -1,0 +1,52 @@
+#vite-div {
+  position: relative;
+  padding: 1rem;
+  & h1 {
+    position: absolute;
+    transform: translate(-10%, -50%);
+    color: var(--color-vite1);
+  }
+  & img {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    transform: translate(-90%, -50%);
+  }
+}
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 0;
+  flex-direction: column;
+}
+
+#game-board ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+#game-board button {
+  width: 8rem;
+  height: 8rem;
+  border: none;
+  border-radius: 15px;
+  background: var(--color-vite1);
+  color: var(--color-vite-dark1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+  cursor: pointer;
+  font-family: "Caprasimo", cursive;
+  padding: 1rem;
+  transition: all 0.1s;
+  &:hover {
+    border: var(--color-vite-dark1) 3px solid;
+  }
+}

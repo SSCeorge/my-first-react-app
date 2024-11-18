@@ -1,0 +1,164 @@
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 1turn;
+}
+
+#game-container {
+  text-align: center;
+  max-width: 45rem;
+  margin: 2rem auto 1rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+  text-shadow: 0 1px 0 #000;
+}
+
+#game-container {
+  --border-angle: 0turn;
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    rgb(254, 198, 31, 0.2) 5%,
+    rgba(167, 81, 254, 0.2) 30%,
+    rgba(95, 173, 254, 0.2) 60%,
+    rgb(57, 12, 99, 0.2) 95%
+  );
+  border: solid 5px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(
+    from var(--border-angle),
+    transparent 25%,
+    rgb(25, 102, 170),
+    rgb(100, 12, 66) 99%,
+    transparent
+  );
+  background: var(--main-bg) padding-box, var(--gradient-border) border-box,
+  var(--main-bg) border-box;
+  background-position: center center;
+  animation: bg-spin 5s linear infinite;
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+#roll-dice {
+  height: 600px;
+}
+
+#roll-btn {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--color-vite-dark1);
+  color: var(--color-vite-dark1);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--color-vite1);
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.5);
+  }
+}
+
+#vs-ai-btn {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid var(--color-vite-dark1);
+  color: var(--color-vite-dark1);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--color-vite1);
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(0.5);
+  }
+}
+
+//3D cube
+.container {
+  margin: 155px auto;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  height: auto;
+  width: 100%;
+  flex-flow: row wrap;
+}
+.wrap {
+  perspective: 800px;
+  perspective-origin: 50% 150px; 
+}
+
+.animate {
+  animation: spin 3s infinite ease-out alternate;
+}
+
+.cube {
+  margin-top: 50px;
+  top: 30px;
+  cursor: pointer;
+  width: 200px;
+  transform-style: preserve-3d;
+  h2 {
+    text-align: center;
+    margin: 57px auto;
+    vertical-align: middle;
+    font-size: 4em;
+    position: relative;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #333;
+    border-radius: 50%;
+    width: 85px;
+  }
+  &:hover h2 {
+    background: rgb(235, 231, 239, 0.55);
+  }
+}
+
+.cube div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  &:hover {
+    background-image: linear-gradient(
+      to bottom,
+      rgba(254, 198, 31, 0.75),
+      rgba(167, 81, 254, 0.85)
+    );
+  }
+}
+
+.back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+.right {
+  transform: rotateY(-270deg) translateX(100px);
+  transform-origin: top right;
+}
+.left {
+  transform: rotateY(270deg) translateX(-100px);
+  transform-origin: center left;
+}
+.top {
+  transform: rotateX(-90deg) translateY(-100px);
+  transform-origin: top center;
+}
+.bottom {
+  transform: rotateX(90deg) translateY(100px);
+  transform-origin: bottom center;
+}
+.front {
+  transform: translateZ(100px);
+}
