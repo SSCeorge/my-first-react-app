@@ -6,6 +6,7 @@ import Player from "./components/Player.jsx";
 import RollDice from "./components/RollDice.jsx";
 import AI from "./components/AI.jsx";
 import { WINNING_COMBINATIONS } from "./winning-combinations.js";
+import soundEffect from './assets/start-sound-effect.mp3';
 
 const initialPlayers = {
   X: 'Player 1',
@@ -19,7 +20,7 @@ const initialGameBoard = [
 ];
 
 const playSound = () => {
-  const audio = new Audio('./src/assets/start-sound-effect.mp3'); 
+  const audio = new Audio(soundEffect); 
   audio.play();
 };
 
