@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useRef, useEffect} from "react";
+import soundEffect from '/start-sound-effect.mp3';
 
 export default function GameOver({ winner, restart, players, vsAI }) {
 
@@ -7,7 +8,7 @@ export default function GameOver({ winner, restart, players, vsAI }) {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('./src/assets/start-sound-effect.mp3');
+    audioRef.current = new Audio(soundEffect);
   }, []);
 
   const playSound = () => {

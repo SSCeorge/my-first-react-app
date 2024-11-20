@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { useRef, useEffect } from "react";
+import soundEffect from '/button-push-chunky.mp3';
 
 export default function GameBoard({ selectedSqr, board }) {
     const audioRef = useRef(null);
 
     useEffect(() => {
-        audioRef.current = new Audio('./src/assets/button-push-chunky.mp3');
+        audioRef.current = new Audio(soundEffect);
     }, []);
 
     const playSound = () => {

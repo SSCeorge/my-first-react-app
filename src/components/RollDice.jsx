@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import soundEffect from '/start-sound-effect.mp3';
 
 export default function RollDice({ setStartingPlayer, setGameStarted }) {
   const [startingPlayer, setStartingPlayerState] = useState(null);
@@ -7,7 +8,7 @@ export default function RollDice({ setStartingPlayer, setGameStarted }) {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('./src/assets/start-sound-effect.mp3');
+    audioRef.current = new Audio(soundEffect);
   }, []);
 
   const playSound = () => {
